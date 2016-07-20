@@ -1,0 +1,3 @@
+{{#each todos as |todo|}}
+  <li>{{#link-to 'todos.show' todo}}{{todo.title}}{{/link-to}}</li>
+{{/each}}
