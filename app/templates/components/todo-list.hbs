@@ -1,3 +1,8 @@
 {{#each todos as |todo|}}
-  <li>{{#link-to 'todos.show' todo}}{{todo.title}}{{/link-to}}</li>
+  <li>
+    {{#link-to 'todos.show' todo}}{{todo.title}}{{/link-to}}
+    ||
+    {{#link-to 'todos.edit' todo}}Edit{{/link-to}}
+    <button {{action 'destroyTodo'}}>Destroy</button>
+  </li>
 {{/each}}

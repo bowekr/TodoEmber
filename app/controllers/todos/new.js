@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-var counter = 0;
+var counter = 114;
 
 export default Ember.Controller.extend({
   actions: {
@@ -10,7 +10,10 @@ export default Ember.Controller.extend({
         title: this.get('title')
       });
       counter++
-      this.transitionToRoute('todos');
+
+      newTodo.save().then( ()=> {
+        this.transitionToRoute('todos.index');
+      });
 
       this.set('title', '');
     }
